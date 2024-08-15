@@ -2,6 +2,8 @@
 
 ### A buffer overflow occurs when a program writes more data to a buffer (a memory area) than it can handle. This can overwrite important data and, in some cases, allow an attacker to execute malicious code.
 
+![buof](https://github.com/user-attachments/assets/3d8a435a-c7b6-4119-920d-7dd348a57bd7)
+
 ## How it happens:
 
 -Buffer: A reserved area in memory for storing data.
