@@ -34,10 +34,10 @@ To practice this buffer overflow case, we will use a C program called `secret.c`
 ```bash
 gcc -g -fno-stack-protector -z execstack -m32 secret.c -o secret
 ```
-or
-```bash
-gcc -m32 -fno-stack-protector -z execstack -no-pie -std=gnu89 secret.c -o secret
-```
+
+> "If `gcc -g -fno-stack-protector -z execstack -m32 secret.c -o secret` doesn’t work and gives an error about `gets` being implicitly declared, just add this line after your `#include`s:  
+> `char *gets(char *);`  
+> This tells the compiler what `gets` looks like, even if it's not officially declared anymore."
 
 Address Space Layout Randomization (ASLR) is a security technique that randomizes memory addresses to protect against certain attacks. 
 
